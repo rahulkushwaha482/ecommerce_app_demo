@@ -27,7 +27,7 @@ class Products {
   String? description;
   double? mrp;
   String? productImages;
-  int? quantity;
+  bool? isAdded;
 
   Products(
       {this.id,
@@ -35,7 +35,8 @@ class Products {
         this.description,
         this.mrp,
         this.productImages,
-        this.quantity});
+        this.isAdded
+      });
 
   Products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -43,7 +44,7 @@ class Products {
     description = json['description'];
     mrp = json['mrp'];
     productImages = json['productImages'];
-    quantity = json['quantity'];
+    isAdded = json['isAdded'];
   }
 
   Map<String, dynamic> toJson() {
@@ -53,7 +54,7 @@ class Products {
     data['description'] =description;
     data['mrp'] = mrp;
     data['productImages'] =productImages;
-    data['quantity'] =quantity;
+    data['isAdded'] =isAdded;
     return data;
   }
 }
