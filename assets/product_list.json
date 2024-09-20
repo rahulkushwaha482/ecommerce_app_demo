@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Levi roughed jeans for male",
+      "description": "Sample Description",
+      "mrp": 2000.0,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/A83430003_01_Style_Shot_11045b34-3c63-4fb4-8734-dcb357444d17.jpg?v=1712743204"
+    },
+    {
+      "id": 2,
+      "title": "Men's Textured Regu...",
+      "description": "Sample Description",
+      "mrp": 2699.0,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/A87650046_01_Front.jpg?v=1726141129"
+    },
+    {
+      "id": 3,
+      "title": "Women's Brand Logo Slides",
+      "description": "Sample Description",
+      "mrp": 1010.0,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/375440100_04_Details_ce1cae71-d9d8-47ed-82d5-3808eeaedc84.jpg?v=1695736676"
+    },
+    {
+      "id": 4,
+      "title": "Men's 512 Mid Indigo Slim Tapered Fit Jeans",
+      "description": "Sample Description",
+      "quantity": 1,
+      "mrp": 2495.0,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/360870818_01_Style_Shot_47e57cf2-43ba-41f1-9b0e-aeae4a5c63c6.jpg?v=1712743060"
+    },
+    {
+      "id": 5,
+      "title": "Men's Solid Cream V Neck Denim Jacket",
+      "description": "Sample Description",
+      "mrp": 6999.0,
+      "quantity": 1,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/A71390001_01_Styleshot.jpg?v=1725607956"
+    },
+    {
+      "id": 6,
+      "title": "Women's High Rise 721 Skinny Fit Jeans",
+      "description": "Sample Description",
+      "mrp": 1879.0,
+      "quantity": 1,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/A66380002_01_Front_9a812ec0-0cb9-4b92-a4d2-d61e759690e5.jpg?v=1712742000"
+    },
+    {
+      "id": 7,
+      "title": "Men's Navy Solid Rucksack",
+      "description": "Sample Description",
+      "mrp": 1339.0,
+      "quantity": 1,
+      "isAdded": false,
+      "productImages": "https://levi.in/cdn/shop/files/D02140002_01_Front_1462d230-1a8a-443b-8b64-47c1a8be4e44.jpg?v=1712743338"
+    }
+
+  ]
+}
