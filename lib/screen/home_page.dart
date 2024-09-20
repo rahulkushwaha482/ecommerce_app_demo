@@ -1,21 +1,43 @@
+import 'package:ecommerce_demo_app/controller/cart_controller.dart';
 import 'package:ecommerce_demo_app/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:badges/badges.dart' as badges;
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(HomeController());
+    var cartController = Get.put(CartController());
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
         centerTitle: false,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.shopping_cart),
-          )
+        actions:  [
+    Obx(() {return  GestureDetector(
+            onTap: (){
+              Get.toNamed('/cart');
+            },
+            child: Padding(
+              padding: EdgeInsets.only(right: 18.0),
+              child: badges.Badge(
+                  showBadge: cartController.cartItems.isNotEmpty,
+                  badgeContent: Text(
+                    cartController.cartItems.length.toString(),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  badgeAnimation: badges.BadgeAnimation.rotation(
+                    animationDuration: Duration(seconds: 1),
+                    colorChangeAnimationDuration: Duration(seconds: 1),
+                    loopAnimation: false,
+                    curve: Curves.fastOutSlowIn,
+                    colorChangeAnimationCurve: Curves.easeInCubic,
+                  ),child: Icon(Icons.shopping_cart)),
+            ),
+          );}),
         ],
       ),
       body:  Obx(() {
@@ -63,7 +85,7 @@ class HomePage extends StatelessWidget {
                         GestureDetector(
                           onTap: (){
 
-
+                            cartController.addToCart(product);
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text('${product.title} added to cart!'),
