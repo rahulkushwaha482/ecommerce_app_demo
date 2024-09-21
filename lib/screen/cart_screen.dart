@@ -1,16 +1,18 @@
 import 'package:ecommerce_demo_app/controller/cart_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CartController());
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart'),
+        title: const Text('Cart'),
         centerTitle: false,
       ),
       body: Obx(() {
@@ -24,9 +26,11 @@ class CartScreen extends StatelessWidget {
                         itemCount: controller.cartItems.length,
                         itemBuilder: (context, index) {
                           final cartItem = controller.cartItems[index];
-                          print(
-                            cartItem.productImages.toString(),
-                          );
+                          if (kDebugMode) {
+                            print(
+                              cartItem.productImages.toString(),
+                            );
+                          }
                           return Card(
                             margin: const EdgeInsets.all(8.0),
                             shape: RoundedRectangleBorder(
@@ -35,7 +39,6 @@ class CartScreen extends StatelessWidget {
                             ),
                             child: Row(
                               children: [
-                                // Product Image
                                 Container(
                                   width: 100,
                                   height: 100,
@@ -45,7 +48,6 @@ class CartScreen extends StatelessWidget {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                // Product Details
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
@@ -56,7 +58,7 @@ class CartScreen extends StatelessWidget {
                                       children: [
                                         Text(
                                           cartItem.title.toString(),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -66,7 +68,7 @@ class CartScreen extends StatelessWidget {
                                         const SizedBox(height: 8.0),
                                         Text(
                                           'Rs ${cartItem.mrp}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontSize: 16,
                                             color: Colors.black,
                                           ),
@@ -80,7 +82,7 @@ class CartScreen extends StatelessWidget {
                                 Align(
                                   alignment: Alignment.bottomRight,
                                   child: IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.delete,
                                       color: Colors.red,
                                       size: 30,
@@ -97,7 +99,6 @@ class CartScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Total Items and Amount
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -105,24 +106,21 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Total amount: Rs ${controller.totalPrice}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 16.0),
-                        // Proceed to Payment Button
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {
-                              // Handle the payment process
-                            },
-                            child: Text('Proceed to Payment'),
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.all(16.0),
-                              textStyle:
-                                  TextStyle(fontSize: 18, color: Colors.red),
+                              textStyle: const TextStyle(
+                                  fontSize: 18, color: Colors.red),
                               backgroundColor: Colors.amber,
                             ),
+                            child: const Text('Proceed to Payment'),
                           ),
                         ),
                       ],
@@ -130,7 +128,7 @@ class CartScreen extends StatelessWidget {
                   ),
                 ],
               )
-            : Center(
+            : const Center(
                 child: Text('Your Cart Items are empty!!'),
               );
       }),

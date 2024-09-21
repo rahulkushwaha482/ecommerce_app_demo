@@ -9,7 +9,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    fetchProducts(); // Fetch products when the controller is initialized
+    fetchProducts();
   }
 
   void fetchProducts() async {
