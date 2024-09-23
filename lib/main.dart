@@ -1,25 +1,32 @@
-import 'package:ecommerce_demo_app/screen/home_page.dart';
+import 'dart:async';
+import 'dart:developer';
+
+import 'package:ecommerce_demo_app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runZonedGuarded<Future<void>>(
+        () async {
+      WidgetsFlutterBinding.ensureInitialized();
+
+      // Run the app within the same zone
+      runApp(
+        GetMaterialApp(
+          title: 'Cart ',
+          initialRoute: '/home',
+          debugShowCheckedModeBanner: false,
+          getPages: AppPages.pages,
+          theme: ThemeData(useMaterial3: true),
+        ),
+      );
+    },
+
+        (dynamic error, StackTrace stackTrace) {
+      log('error $error');
+      log('stackTrace $stackTrace');
+    },
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
-    );
-  }
-}
 
