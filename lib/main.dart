@@ -1,7 +1,9 @@
-import 'package:ecommerce_demo_app/screen/home_page.dart';
+import 'package:ecommerce_demo_app/screen/product_screen.dart';
+import 'package:ecommerce_demo_app/service/service_locator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const ProductScreen(),
     );
   }
 }
